@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>View Puzzles</title>
+</head>
+<body>
+<h1>View Puzzles</h1>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Body</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+{% for puzzle in puzzles %}
+<tr>
+<td><a href="/puzzle_detail/{{ puzzle.id }}">{{ puzzle.title }}</a></td>
+<td>{{ puzzle.body }}</td>
+<td>{{ puzzle.solution }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</body>
+</html>
+
+
