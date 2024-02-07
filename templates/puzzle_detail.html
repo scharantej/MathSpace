@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{ puzzle.title }}</title>
+</head>
+<body>
+<h1>{{ puzzle.title }}</h1>
+<p>{{ puzzle.body }}</p>
+<h2>Comments</h2>
+<ul>
+{% for comment in comments %}
+<li>{{ comment.author }}: {{ comment.body }}</li>
+{% endfor %}
+</ul>
+<h2>Post a Comment</h2>
+<form action="/post_comment" method="POST">
+<label for="author">Name:</label>
+<input type="text" name="author" id="author">
+<br>
+<label for="body">Comment:</label>
+<textarea name="body" id="body"></textarea>
+<br>
+<input type="submit" value="Post Comment">
+</form>
+</body>
+</html>
+
+
